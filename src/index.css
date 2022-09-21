@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  width: fit-content;
+  margin: 30px auto;
+  min-height: 300px;
+  border: 25px solid rgba(0, 0, 0, 0.05);
+  background: #f2f2f2;
+  padding: 30px;
+}
+
+header {
+  font-weight: 900;
+  font-size: 24px;
+  display: flex;
+  justify-content: left;
+}
+
+.stageTitle {
+  padding: 2px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+}
+
+.stageNumber {
+  padding: 3px;
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+}
+
+.stageText {
+  font-weight: 900;
+  padding: 15px 0 5px 0;
+  display: flex;
+  justify-content: left;
+  margin: 0 3px;
+}
+
+.checkMark {
+  padding-bottom: 5px;
+}
+
+.task {
+  display: flex;
+  padding: 2px;
+}
+
+.random-fact {
+  color: #f2f2f2;
+  font-weight: 900;
+  max-width: 380px;
+  background-color: #0674fc;
+  padding: 25px 20px;
+  border: 2px solid black;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
