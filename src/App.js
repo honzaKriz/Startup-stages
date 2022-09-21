@@ -8,9 +8,18 @@ function App() {
     ? JSON.parse(localStorage.getItem("startupProgressData"))
     : initialData;
 
+  useEffect(() => {
+    localStorage.setItem("startupProgressData", JSON.stringify(progressData));
+  }, [progressData]);
+
   const [progress, setProgress] = useState(progressData);
   const [randomFact, setRandomFact] = useState();
   const [isStartupDone, setIsStartupDone] = useState();
+
+  const clearLocalStorage = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
 
   const areAllStagesDone = (progress) => {
     return progress.every((stage) => stage.isDone === true);
@@ -70,6 +79,9 @@ function App() {
         <StartupProgress data={progress} updateData={updateData} />
       </div>
       {randomFact ? <div className="random-fact">{randomFact}</div> : null}
+      {isStartupDone ? (
+        <button onClick={clearLocalStorage}>Clear session data</button>
+      ) : null}
     </>
   );
 }
