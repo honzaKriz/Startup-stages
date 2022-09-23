@@ -8,13 +8,13 @@ function App() {
     ? JSON.parse(localStorage.getItem("startupProgressData"))
     : initialData;
 
-  useEffect(() => {
-    localStorage.setItem("startupProgressData", JSON.stringify(progressData));
-  }, [progressData]);
-
   const [progress, setProgress] = useState(progressData);
   const [randomFact, setRandomFact] = useState();
   const [isStartupDone, setIsStartupDone] = useState();
+
+  useEffect(() => {
+    localStorage.setItem("startupProgressData", JSON.stringify(progress));
+  }, [progress]);
 
   const clearLocalStorage = () => {
     localStorage.clear();
