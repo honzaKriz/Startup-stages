@@ -6,6 +6,8 @@ export default function Stage({ stage, updateData }) {
   const mapClickToTask = (taskId) => {
     if (stage.isActive && !stage.isDone) {
       updateData(stage.id, taskId);
+    } else if (stage.isDone) {
+      updateData(stage.id, taskId);
     }
   };
 
