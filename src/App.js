@@ -26,9 +26,8 @@ function App() {
   };
 
   const updateData = (stageId, taskId) => {
-    const selectedTask = progress
-      .find((stage) => stage.id === stageId)
-      .tasks.find((task) => task.id === taskId);
+    const selectedStage = progress.find((stage) => stage.id === stageId);
+    const selectedTask = selectedStage.tasks.find((task) => task.id === taskId);
     selectedTask.isDone = !selectedTask.isDone;
 
     enableStage(progress);
